@@ -11,9 +11,10 @@
 
 
 # VehicleBlacklist
+A script that allows you to create vehicles for only one or several jobs, so you can make sure people don't steal emergency vehicles. Like police, ambulance and so on. This script causes no performance loss.
 
 ### How to install
-1. Downlaod the recource
+1. Download the recource
 2. change te vehicle's in the client file named carblacklist.lua
 3. add this to your server.cfg:
 ```
