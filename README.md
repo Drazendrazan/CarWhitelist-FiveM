@@ -13,3 +13,10 @@
 # VehicleBlacklist
 
 ### How to install
+1. Downlaod the recource
+2. change te vehicle's in the client file named carblacklist.lua
+3. add this to your server.cfg:
+```
+ensure VehicleBlacklist
+```
+4. Enjoy the script :D
