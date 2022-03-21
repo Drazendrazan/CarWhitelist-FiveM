@@ -19,6 +19,6 @@ A script that allows you to create vehicles for only one or several jobs, so you
 3. Rename te script to: ```VehicleBlacklist```
 4. Add this to your server.cfg:
 ```
-ensure AfkKick
+ensure VehicleBlacklist
 ```
 5. Enjoy the script :D
