@@ -25,6 +25,9 @@ A script that allows you to create vehicles for only one or several jobs, so you
 - Easy configureate what vehicles are whitelisted for emergency like police ambulance and so forth
 
 _This script has a version check, new versions will be released regularly, so you can see it right at the start of the server._
+
+### Requirements:
+- ESX
   
 # Download and preview
 [PREVIEW v1.0.0](https://youtu.be/58E7WdJvPlQ)
