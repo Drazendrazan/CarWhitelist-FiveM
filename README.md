@@ -30,7 +30,7 @@ _This script has a version check, new versions will be released regularly, so yo
 - ESX
   
 # Download and preview
-[PREVIEW v1.0.0](https://youtu.be/58E7WdJvPlQ)
+[PREVIEW v1.0.0](https://youtu.be/9GgRlp84NBM)
 
 [DOWNLOAD](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) 
 
