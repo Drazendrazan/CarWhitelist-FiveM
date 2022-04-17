@@ -8,8 +8,8 @@ Citizen.CreateThread(function()
 		local xPlayer = ESX.GetPlayerData()
 
 		if not (xPlayer.job.name == "police" or xPlayer.job.name == "ambulance" or xPlayer.job.name == "taxi" or xPlayer.job.name == "mechanic") then -- add here more job's if needed	
-			if IsPedInAnyVehicle(GetPlayerPed(-1)) then
-				Ped = GetPlayerPed(-1)
+			if IsPedInAnyVehicle(PlayerPedId()) then
+				Ped = PlayerPedId()
 				vehicle = GetVehiclePedIsIn(Ped, false)
 
 				if Ped and vehicle then
