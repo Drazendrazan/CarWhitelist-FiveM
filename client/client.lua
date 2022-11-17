@@ -56,7 +56,7 @@ function getEmergencyJob()
 		if v == ESX.PlayerData.job.name then
 			return true
 		end
-	end
+	end 
 
 	return false
 end
