@@ -33,7 +33,6 @@ Citizen.CreateThread(function()
 
 		local playerPed = PlayerPedId()
 		
-		print(getEmergencyJob())
 		if not getEmergencyJob() and playerPed then
 			if IsPedInAnyVehicle(playerPed) then
 				vehicle = GetVehiclePedIsIn(playerPed, false)
