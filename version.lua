@@ -1,37 +1,24 @@
-local label =
-[[ 
-  //   
-  ||            __                                    __    __  __       
-  ||           |  \                                  |  \  |  \|  \      
-  ||           | $$      __    __   _______  ______  | $$\ | $$| $$      
-  ||           | $$     |  \  |  \ /       \|      \ | $$$\| $$| $$      
-  ||           | $$     | $$  | $$|  $$$$$$$ \$$$$$$\| $$$$\ $$| $$      
-  ||           | $$     | $$  | $$| $$      /      $$| $$\$$ $$| $$      
-  ||           | $$_____| $$__/ $$| $$_____|  $$$$$$$| $$ \$$$$| $$_____ 
-  ||           | $$     \\$$    $$ \$$     \\$$    $$| $$  \$$$| $$     \
-  ||            \$$$$$$$$ \$$$$$$   \$$$$$$$ \$$$$$$$ \$$   \$$ \$$$$$$$$                                                                                                                                                                 
-  ||                           Created by LucaNL#2230
-  ||]]
+PerformHttpRequest("https://api.github.com/repos/LucaNL/CarWhitelist-FiveM/releases/latest", function(err, text, headers)
+	Citizen.Wait(5000)
+	if text then
+		local info = json.encode(text) info = json.decode(text)
+		local currentVersion = GetResourceMetadata(GetCurrentResourceName(), "version") 
+		local newestVersion = info.tag_name
 
-function GetCurrentVersion()
-	return GetResourceMetadata( GetCurrentResourceName(), "version" )
-end
+		print("  //\n  ||    "..GetCurrentResourceName().." is Created by "..info.author.login.."#2230\n  ||")
 
-PerformHttpRequest("https://version.lucadev.nl/CarWhitelist-FiveM/version.txt", function( err, text, headers )
-	Citizen.Wait(2000)
-	print( label )
-	local curVer = GetCurrentVersion()
-	print( "  ||    Current version: " .. curVer )
-	if ( text ~= nil ) then
-		print( "  ||    Latest recommended version: " .. text .."\n  ||" )
-
-		if ( text ~= curVer ) then
-			print( "  ||    ^1Your CarWhitelist version is outdated, please visit the FiveM forum page at https://forum.cfx.re/t/release-free-carwipe-fivem/4839898 to get the latest version.^0\n  ||" )
+		if ( newestVersion ~= nil ) then
+			if newestVersion ~= currentVersion then
+				print("  ||    Current version: ^1" .. currentVersion .. "^0")
+				print("  ||    Latest version: ^2" .. newestVersion .."^0\n  ||")
+				print("  ||    ^1An update is available for "..GetCurrentResourceName()..", visit https://github.com/LucaNL/CarWhitelist-FiveM to get the latest version.\n^0  \\\\")
+			elseif newestVersion == currentVersion then
+				print("  ||    Current version: ^2" .. currentVersion .. "^0")
+				print("  ||    Latest version: ^2" .. newestVersion .."^0\n  ||")
+				print("  ||    ^2"..GetCurrentResourceName().." is up to date!\n^0  \\\\")
+			end
 		else
-			print( "  ||    ^2CarWhitelist is up to date!\n^0  ||  \n  \\\\\n" )
-			return
+			print("  ||    ^1There was an error getting the latest version information.\n^0  \\\\")
 		end
-	else
-		print( "  ||    ^1There was an error getting the latest version information.\n^0  ||  \n  \\\\\n" )
 	end
 end)
