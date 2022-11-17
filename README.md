@@ -1,42 +1,44 @@
 <h1 align="center">Hi 👋, I'm LucaNL</h1>
 <h3 align="center">I'am a mainly FiveM Developer</h3>
 
-- 📫 How to reach me? **LucaNL#2230** on discord
+- 📫 How to reach me? Send me a message on here or **LucaNL#2230** on discord.
 
-**Hello,**
+I myself have always been looking for a good working script for a Car Whitelist system, so that I can choose which job can drive a vehicle so for example someone who is not a police cannot drive a police car and so on. 
 
-I myself was always looking for a good working script for a CarWhitelist so i can chose what job can drive a emergency vehicle, but never really could find something good, and something that actually did it right. So I made a CarWhitelist script.
+But I could never really find anything good, and something that actually did it well so that's why I made this **CarWhitelist** Script.
 
 # CarWhitelist-FiveM
-A script that allows you to create vehicles for only one or several jobs, so you can make sure people dont steal emergency vehicles. Like police, ambulance and so on.
+---
+A script that allows you to make vehicles accessible only to a specific jobs, so you can make sure people don't steal emergency vehicles.
+
+https://github.com/LucaNL/CarWhitelist-FiveM
 
 ### Features:
 
-- configureate what job can sit in a emergency as driver
-- Notifications when kicked out of an emergency vehicle
-- No performance loss
-- Easy configureate what vehicles are whitelisted for emergency like police ambulance and so forth
-
-_This script has a version check, new versions will be released regularly, so you can see it right at the start of the server._
+> - Easy Configure which jobs can drive in emergency vehicles via the simple config.
+> - You will be ejected from the vehicle if you do not have the job that is allowed in the vehicle.
+> - Easy Configure what vehicles are only for emergency services like police, ambulance .
+> - The Script does not cause lag or reduce server performance
 
 ### Requirements:
-- ESX
-  
-# Download And Preview
-[PREVIEW v1.0.0](https://youtu.be/9GgRlp84NBM)
 
-[DOWNLOAD](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) 
+> - ESX (No matter which version just change config.lua)
+
+# Download And Install
+---
+[**DOWNLOAD**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) 
 
 ### How to install
-1. Download the recource
-2. Change the config.lua to what you like
+1. [**Download**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) the recource.
+2. Change the config.lua to what you like.
 4. Add this to your server.cfg:
 ```
 ensure CarWhitelist-FiveM
 ```
-5. Enjoy the script :D
+5. Restart Server.
 
 # Changelog
+---
 **Changelog v1.1.0**
 ```
   - Config better and clearer
