@@ -1,22 +1,46 @@
 ESX = nil
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+Citizen.CreateThread(function()
+	while ESX == nil do
+		if Config.OldESX then
+			TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		elseif not Config.OldESX then
+			ESX = exports["es_extended"]:getSharedObject()
+		end
+		Citizen.Wait(10)
+	end
+	while ESX.GetPlayerData().job == nil do
+		Citizen.Wait(10)
+	end
+	ESX.PlayerData = ESX.GetPlayerData()
+end)
+
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+    ESX.PlayerData.job = job
+end)
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(Config.CheckTime)
+		while ESX == nil do
+			Wait(100)
+		end
 
-		local xPlayer = ESX.GetPlayerData()
+		while ESX.PlayerData == nil do
+			Wait(100)
+		end
 
-		if not (xPlayer.job.name == "police" or xPlayer.job.name == "ambulance" or xPlayer.job.name == "taxi" or xPlayer.job.name == "mechanic") then -- add here more job's if needed	
-			if IsPedInAnyVehicle(PlayerPedId()) then
-				Ped = PlayerPedId()
-				vehicle = GetVehiclePedIsIn(Ped, false)
+		local playerPed = PlayerPedId()
+		
+		print(getEmergencyJob())
+		if not getEmergencyJob() and playerPed then
+			if IsPedInAnyVehicle(playerPed) then
+				vehicle = GetVehiclePedIsIn(playerPed, false)
 
-				if Ped and vehicle then
-					if GetPedInVehicleSeat(vehicle, -1) == Ped then
-						if(getVehicle(Ped, vehicle)) then
-							Citizen.Wait(Config.CheckTime)
-						end
+				if vehicle then
+					if GetPedInVehicleSeat(vehicle, -1) == playerPed then
+						getVehicleStatus(playerPed, vehicle)
 					end
 				end
 			end
@@ -24,8 +48,22 @@ Citizen.CreateThread(function()
 	end
 end)
 
+function getEmergencyJob()
+	if not ESX.PlayerData then
+		return false
+	end
+
+	for k,v in ipairs(Config.emergencyJobs) do
+		if v == ESX.PlayerData.job.name then
+			return true
+		end
+	end
+
+	return false
+end
+
 function getVehicleBlacklist(model)
-	for _, blacklistedVehicle in pairs(Config.carsblacklisted) do
+	for _, blacklistedVehicle in pairs(Config.emergencyVehicles) do
 		if model == GetHashKey(blacklistedVehicle) then
 			return true
 		end
@@ -34,22 +72,14 @@ function getVehicleBlacklist(model)
 	return false
 end
 
-function getVehicle(Ped, vehicle)
+function getVehicleStatus(Ped, vehicle)
 	if vehicle then
 		vehicleModel = GetEntityModel(vehicle)
-		vehicleName = GetDisplayNameFromVehicleModel(vehicleModel)
 
 		if getVehicleBlacklist(vehicleModel) then
 			TaskLeaveVehicle(Ped, vehicle, 1)
 			
-			if Config.pNotify then
-				TriggerEvent("pNotify:SendNotification", {
-					text = Config.NotifyMessage,
-					type = "error",
-					timeout = 5000,
-					layout = "bottomCenter"
-				})
-			elseif Config.EsxNotify then
+			if Config.Notify then
 				ESX.ShowNotification(Config.NotifyMessage)
 			end
 
