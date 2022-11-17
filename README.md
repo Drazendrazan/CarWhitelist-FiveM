@@ -8,7 +8,7 @@ I myself have always been looking for a good working script for a Car Whitelist 
 But I could never really find anything good, and something that actually did it well so that's why I made this **CarWhitelist** Script.
 
 # CarWhitelist-FiveM
----
+
 A script that allows you to make vehicles accessible only to a specific jobs, so you can make sure people don't steal emergency vehicles.
 
 https://github.com/LucaNL/CarWhitelist-FiveM
@@ -25,7 +25,7 @@ https://github.com/LucaNL/CarWhitelist-FiveM
 > - ESX (No matter which version just change config.lua)
 
 # Download And Install
----
+
 [**DOWNLOAD**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) 
 
 ### How to install
@@ -38,7 +38,7 @@ ensure CarWhitelist-FiveM
 5. Restart Server.
 
 # Changelog
----
+
 **Changelog v1.1.0**
 ```
   - Config better and clearer
