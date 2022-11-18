@@ -11,8 +11,6 @@ But I could never really find anything good, and something that actually did it 
 
 A script that allows you to make vehicles accessible only to a specific jobs, so you can make sure people don't steal emergency vehicles.
 
-https://github.com/LucaNL/CarWhitelist-FiveM
-
 ### Features:
 
 > - Easy Configure which jobs can drive in emergency vehicles via the simple config.
