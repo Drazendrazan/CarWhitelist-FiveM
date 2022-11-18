@@ -2,14 +2,14 @@ Config = {}
 
 Config.OldESX = false -- Set true not using ESX Legacy but an older ESX version
 
-Config.emergencyJobs = { -- put here the job that you want to drive in the emergencyVehicles below
+Config.emergencyJobs = { -- Put here the job that you want to drive in the emergencyVehicles below
     'police',
     'ambulance',
     'mechanic', 
     'taxi'
 }
 
-Config.emergencyVehicles = { -- put here the vehicles that you want only emergency services to be able to get in
+Config.emergencyVehicles = { -- Put here the vehicles that you want only emergency services to be able to get in
     "police",
     "ambulance",
     "flatbed",
