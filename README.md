@@ -22,9 +22,11 @@ A script that allows you to make vehicles accessible only to a specific jobs, so
 
 > - ESX (No matter which version just change config.lua)
 
-# Download And Install
+# Download, Preview And Install
 
 [**DOWNLOAD**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) 
+
+[**PREVIEW**](https://www.youtube.com/watch?v=9GgRlp84NBM)
 
 ### How to install
 1. [**Download**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) the recource.
