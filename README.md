@@ -29,7 +29,7 @@ A script that allows you to make vehicles accessible only to a specific jobs, so
 ### How to install
 1. [**Download**](https://github.com/LucaNL/CarWhitelist-FiveM/archive/refs/heads/main.zip) the recource.
 2. Change the config.lua to what you like.
-4. Add this to your server.cfg:
+3. Add this to your server.cfg:
 ```
 ensure CarWhitelist-FiveM
 ```
@@ -38,9 +38,7 @@ ensure CarWhitelist-FiveM
 # Changelog
 
 **Changelog v1.1.0**
-```
-  - Config better and clearer
-  - Fixed job checker sometime not working
-  - Fixed ESX bug
-  - Version checker update
-```
+  > - Config better and clearer
+  > - Fixed job checker sometime not working
+  > - Fixed ESX bug
+  > - Version checker update
