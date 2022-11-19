@@ -33,7 +33,7 @@ A script that allows you to make vehicles accessible only to a specific jobs, so
 ```
 ensure CarWhitelist-FiveM
 ```
-5. Restart Server.
+4. Restart Server.
 
 # Changelog
 
